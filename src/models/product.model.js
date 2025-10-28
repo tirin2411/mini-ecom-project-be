@@ -14,6 +14,8 @@ const Product = sequelize.define("Product", {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },
+}, {
+  timestamps: true,
 });
 
 export default Product;

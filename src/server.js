@@ -1,7 +1,8 @@
 import express from "express";
 import sequelize from "./config/database.js";
 import productRoutes from "./routes/product.routes.js";
-import Product from "./models/product.model.js";
+import userRoutes from "./routes/user.routes.js";
+import cartRoutes from './routes/cart.routes.js';
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
+app.use('/cart', cartRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello from Node API Server");
